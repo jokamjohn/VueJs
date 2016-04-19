@@ -7,15 +7,26 @@
 <body>
 
 <div id="app">
-    <h1>{{ message }}</h1>
 
-    <input v-model = "message">
+    <form>
 
-    <pre>
+        <span class="error" v-show="!message">
+            You must enter a message
+        </span>
+
+        <textarea v-model="message" cols="30" rows="10"></textarea>
+
+        <button type="submit" v-show="message">
+            send message
+        </button>
+
+    </form>
+
+     <pre>
 
         {{ $data | json }}
 
-    </pre>
+     </pre>
 
 </div>
 
@@ -25,7 +36,7 @@
 
     //Model object.
     var data = {
-        message: 'Hello World!'
+        message: ''
     };
 
     //View Model
