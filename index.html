@@ -2,31 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Vue JS</title>
+    <title>Events Handling</title>
 </head>
 <body>
 
 <div id="app">
 
-    <form>
+    <form action="done.html" v-on:submit.prevent="handleIt">
 
-        <span class="error" v-show="!message">
-            You must enter a message
-        </span>
-
-        <textarea v-model="message" cols="30" rows="10"></textarea>
-
-        <button type="submit" v-show="message">
-            send message
+        <button type="submit">
+            submit
         </button>
 
     </form>
-
-     <pre>
-
-        {{ $data | json }}
-
-     </pre>
 
 </div>
 
@@ -34,16 +22,16 @@
 
 <script>
 
-    //Model object.
-    var data = {
-        message: ''
-    };
-
     //View Model
     new Vue({
 
         el: '#app',
-        data: data
+
+        methods: {
+            handleIt: function () {
+                alert("Handle submission");
+            }
+        }
 
     });
 
