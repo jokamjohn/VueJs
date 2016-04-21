@@ -2,15 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Events Handling</title>
+    <title>Components</title>
 </head>
 <body>
 
 <div id="app">
 
     <counter></counter>
+    <counter></counter>
 
 </div>
+
+
+<!--Template defining the counter tag.-->
+<template id="count-template">
+    <h1>Heading H1</h1>
+    <button @click="updateCount">Count: {{ count }}</button>
+</template>
 
 <script src="js/vue.js"></script>
 
@@ -19,7 +27,17 @@
 
     Vue.component('counter', {
 
-        template: "<h1>Hello John</h1>"
+        template: "#count-template",
+
+        data: function () {
+            return { count: 0 };
+        },
+
+        methods: {
+            updateCount: function () {
+                this.count += 1;
+            }
+        }
     });
 
 </script>
