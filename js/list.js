@@ -8,20 +8,25 @@ Vue.component('tasks', {
     methods: {
         toggleTaskComplete: function (task) {
             task.completed = !task.completed;
+        },
+
+        isCompleted: function (task) {
+            return task.completed;
         }
     },
 
     computed: {
         remaining: function () {
 
-            return this.list.filter(function (task) {
-                return !task.completed
-            }).length;
+            return this.list.filter(this.isCompleted).length;
         }
     }
 
 
 });
+
+
+
 
 new Vue({
     el: '#app',
