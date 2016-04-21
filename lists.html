@@ -23,7 +23,12 @@
 <!--Tasks template-->
 <template id="tasks-template">
 
-    <h1>My Tasks ({{ remaining }})</h1>
+    <h1>
+        My Tasks
+        <!--Only show the remaining if any-->
+    <span v-show="remaining">({{ remaining }})</span>
+
+    </h1>
 
     <ul>
         <li :class="{ 'completed': task.completed }"
