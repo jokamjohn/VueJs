@@ -8,13 +8,22 @@
 
 <div id="app">
 
-        <button @click="updateCount">
-            Increment Count: {{ count }}
-        </button>
+    <counter></counter>
 
 </div>
 
 <script src="js/vue.js"></script>
+
+<script>
+    //Using Vue components.
+
+    Vue.component('counter', {
+
+        template: "<h1>Hello John</h1>"
+    });
+
+</script>
+
 
 <script>
 
@@ -22,14 +31,14 @@
     new Vue({
 
         el: '#app',
-        data: {
-            count: 0
-        },
-        methods: {
-            updateCount: function () {
-                this.count += 1;
-            }
-        }
+//        data: {
+//            count: 0
+//        },
+//        methods: {
+//            updateCount: function () {
+//                this.count += 1;
+//            }
+//        }
 
     });
 
