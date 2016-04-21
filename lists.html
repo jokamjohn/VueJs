@@ -5,7 +5,9 @@
     <title>Lists</title>
 
     <style>
-        .completed { text-decoration: line-through }
+        .completed {
+            text-decoration: line-through
+        }
     </style>
 </head>
 <body>
@@ -14,12 +16,14 @@
 
 
     <!--Tasks Task-->
-   <tasks :list="tasks"></tasks>
+    <tasks :list="tasks"></tasks>
 
 </div>
 
 <!--Tasks template-->
 <template id="tasks-template">
+
+    <h1>My Tasks ({{ remaining }})</h1>
 
     <ul>
         <li :class="{ 'completed': task.completed }"
