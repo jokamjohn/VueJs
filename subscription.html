@@ -28,7 +28,11 @@
 
     <span>{{ plan.price }}/month</span>
 
-    <button @click="setActivePlan">{{ isUpgrade ? 'Upgrade' : 'Downgrade' }}</button>
+    <button @click="setActivePlan" v-show="plan.name !== active.name">{{ isUpgrade ? 'Upgrade' : 'Downgrade' }}</button>
+
+    <span v-else>
+        Selected
+    </span>
 
 </template>
 
