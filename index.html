@@ -8,15 +8,15 @@
 
 <div id="app">
 
-    <counter></counter>
-    <counter></counter>
+    <counter heading="Likes"></counter>
+    <counter heading="Dislikes"></counter>
 
 </div>
 
 
 <!--Template defining the counter tag.-->
 <template id="count-template">
-    <h1>Heading H1</h1>
+    <h1>{{ heading }}</h1>
     <button @click="updateCount">Count: {{ count }}</button>
 </template>
 
@@ -28,6 +28,8 @@
     Vue.component('counter', {
 
         template: "#count-template",
+
+        props: [ 'heading'],
 
         data: function () {
             return { count: 0 };
