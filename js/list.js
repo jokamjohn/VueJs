@@ -7,5 +7,11 @@ new Vue({
             {body:'Going to hospital', completed:true },
             {body:'Going to bank', completed:false },
             {body:'Going to market', completed:false }]
+    },
+
+    methods: {
+        toggleTaskComplete: function (task) {
+            task.completed = !task.completed;
+        }
     }
 });
