@@ -15,11 +15,16 @@ Vue.component('tasks', {
         },
 
         inProgress: function (task) {
-            return ! task.completed;
+            return !task.completed;
         },
 
         deleteTask: function (task) {
             this.list.$remove(task);
+        },
+
+        // make the uncompleted tasks the tasks in the list
+        clearCompleted: function () {
+            this.list = this.list.filter(this.inProgress);
         }
     },
 
@@ -32,8 +37,6 @@ Vue.component('tasks', {
 
 
 });
-
-
 
 
 new Vue({
