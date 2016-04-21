@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Lists</title>
+
+    <style>
+        .completed { text-decoration: line-through }
+    </style>
 </head>
 <body>
 
 <div id="app">
 
     <ul>
-        <li v-for="task in tasks">
-            {{ task }}
+        <li :class="{ 'completed': task.completed }" v-for="task in tasks">
+            {{ task.body }}
         </li>
     </ul>
 
