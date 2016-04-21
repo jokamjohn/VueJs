@@ -47,3 +47,4 @@ new Vue({
             {body: 'Going to market', completed: false}]
     }
 });
+

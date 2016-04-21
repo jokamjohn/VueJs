@@ -30,7 +30,7 @@
 
     </h1>
 
-    <ul>
+    <ul v-show="list.length">
         <li :class="{ 'completed': task.completed }"
             v-for="task in list"
             @click="toggleTaskComplete(task)">
@@ -40,6 +40,8 @@
             <strong @click="deleteTask(task)">X</strong>
         </li>
     </ul>
+
+    <p v-else> No Tasks at the moment</p>
 
 
 </template>
