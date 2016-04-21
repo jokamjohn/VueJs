@@ -12,13 +12,17 @@ Vue.component('tasks', {
 
         isCompleted: function (task) {
             return task.completed;
+        },
+
+        inProgress: function (task) {
+            return ! task.completed;
         }
     },
 
     computed: {
         remaining: function () {
 
-            return this.list.filter(this.isCompleted).length;
+            return this.list.filter(this.inProgress).length;
         }
     }
 
