@@ -6,11 +6,13 @@
 </head>
 <body>
 
-    <h1>Skill : {{ skill }}</h1>
+<h1>{{ fullName }}</h1>
 
-    <input type="text" v-model="points">
+<input type="text" v-model="first" placeholder="First Name">
 
-    <script src="js/vue.js"></script>
+<input type="text" v-model="last" placeholder="Last Name">
+
+<script src="js/vue.js"></script>
 
 <script>
 
@@ -19,18 +21,14 @@
         el: 'body',
 
         data: {
-            points: 50
+            first: 'Musoke',
+            last: 'Martin'
         },
 
         computed: {
-            skill: function () {
+            fullName: function () {
 
-                if (this.points <= 100)
-                {
-                    return 'Beginner';
-                }
-
-                return 'Advanced';
+                return this.first + ' ' + this.last;
             }
         }
 
